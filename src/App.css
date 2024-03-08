@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+/* Styling the scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255,0); /* Change this to your desired track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #66fcf1; /* Change this to your desired thumb color */
+}
