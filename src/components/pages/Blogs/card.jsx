@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack } from "@mui/material";
 import BlogImg from "../../../Assets/images/blog.png";
 import CardHeading from "../../utilities/Card/cardHeading";
 import CardCaption from "../../utilities/Card/cardCaption";
