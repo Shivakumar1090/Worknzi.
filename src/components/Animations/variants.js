@@ -1,27 +1,9 @@
-export const FadeVaraint = {
-    "hidden" : {
-        opacity: 0,
-    },
-    "visible": {
-        opacity: 1,
-        transition: {duration: 3,type: "spring"},
-    },
-}
 
-export const MoveUpVariant = {
-    "hidden" : {
-        y: 50,
-    },
-    "visible": {
-        y: 0,
-        transition: {duration: 3,type: "spring"},
-    },
-}
 
 export const scrollVariant = {
     "hidden" : {
-        y: 100,
-        opacity: 0.1,
+        y: 50,
+        opacity: 0,
     },
     "visible": {
         y: 0,
@@ -35,8 +17,4 @@ export const scrollVariant = {
     "viewport": {
         once: true,
     }
-}
-
-export const imageVariant = {
-    
 }

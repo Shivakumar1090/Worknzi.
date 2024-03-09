@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import fbicon from "../../../Assets/icons/accounts/fb.png";
 import instaicon from "../../../Assets/icons/accounts/insta.png";
 

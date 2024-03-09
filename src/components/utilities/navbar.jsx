@@ -12,7 +12,6 @@ import Logo from "./logo";
 import PropTypes from 'prop-types';
 import React, { useState } from "react";
 import { motion } from 'framer-motion';
-import { FadeVaraint } from '../Animations/variants';
 
 const navItems = ['Home', 'Services', 'Work','About', 'Testimonials','Contact'];
 const drawerWidth = "100%";
@@ -28,12 +27,15 @@ const Navbar = (props) => {
 
     const drawer = (
         <Box>
-            <IconButton onClick={handleDrawerToggle} sx={{position: 'absolute',right: 10,top: 10}}>
-                <CloseIcon color='primary' style={{fontSize: '30px'}}/>
-            </IconButton>
-            <Stack spacing={3} alignItems="center">
+            <Stack direction="row" justifyContent="space-between"alignItems="center">
+                <Typography fontSize="20px" color="#000" fontWeight={700}>Menu</Typography>
+                <IconButton onClick={handleDrawerToggle} >
+                    <CloseIcon color='primary' style={{fontSize: '20px',background: '#000',padding: '5px',borderRadius: '5px'}}/>
+                </IconButton>
+            </Stack>
+            <Stack spacing={2} alignItems="left" padding="10%">
                 {navItems.map((item) => (
-                    <Typography fontSize="20px" onClick={handleDrawerToggle} fontWeight={200}>{item}</Typography>
+                    <Typography fontSize="18px" color="#000" onClick={handleDrawerToggle} fontWeight={500}>{item}</Typography>
                 ))}
           </Stack>
         </Box>
@@ -45,9 +47,6 @@ const Navbar = (props) => {
         <Box 
             sx={navbar_cont}
             component={motion.div}
-            variants={FadeVaraint}
-            initial="hidden"
-            animate="visible"
            
         >
             <Logo />
@@ -63,7 +62,7 @@ const Navbar = (props) => {
                         <Tab
                             disableRipple
                             sx={{
-                                color: '#fff',
+                                color: currentTab === item ? "#000" : '#d9d9d9',
                                 textTransform: 'capitalize', 
                                 fontWeight : currentTab === item ? 400 : 300,
                                 fontSize: currentTab === item ? "15px" : "13px"
@@ -95,7 +94,7 @@ const Navbar = (props) => {
                 sx={{
                     display: { xs: 'flex', md: 'none' },
                     margin: 'auto',
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', background: "rgba(0,0,0,0.8)", paddingTop: '10%', width: drawerWidth },
+                    '& .MuiDrawer-paper': { boxSizing: 'border-box', background: "rgba(102, 252, 242,0.95)", padding: '5%', width: drawerWidth },
                 }}
             >
                 {drawer}
@@ -120,17 +119,17 @@ Navbar.propTypes = {
     window: PropTypes.func,
 };
 
-const NavItem = ({navtext}) => {
-    return(
-        <Typography 
-            variant="text" 
-            fontSize='15px' 
-            color="#000"
-            sx={{':hover' : {color: '#8247FF'}, marginRight: '30px',cursor: 'pointer',fontWeight: '500'}} 
-        >
-            {navtext}
-        </Typography>
-    )
-}
+// const NavItem = ({navtext}) => {
+//     return(
+//         <Typography 
+//             variant="text" 
+//             fontSize='15px' 
+//             color="#000"
+//             sx={{':hover' : {color: '#8247FF'}, marginRight: '30px',cursor: 'pointer',fontWeight: '500'}} 
+//         >
+//             {navtext}
+//         </Typography>
+//     )
+// }
  
 export default Navbar;

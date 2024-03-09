@@ -16,7 +16,7 @@ const TestimonialCard = () => {
             transition={scrollVariant.changeover}
             whileInView={scrollVariant.visible}
             viewport={scrollVariant.viewport}
-            // whileHover={{scale: 1.1}}
+            // whileHover={{scale: 0.9}}
         >
             <Stack alignItems="center" textAlign="center"  direction="column" spacing={{xs: -3,sm: -5,md: -5}}>
                 <Box sx={innercontainer} alignItems="center">

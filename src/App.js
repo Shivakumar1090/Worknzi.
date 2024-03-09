@@ -12,8 +12,12 @@ import Testimonials from './components/pages/Testimonials/testimonials';
 import Inquiry from './components/pages/Contact us/inquiry';
 import Footer from './components/utilities/footer';
 import HomeCards from './components/pages/Home/HomeCards';
+import Blogs from './components/pages/Blogs/blogs';
+import ScrollTop from './components/utilities/scrolltop';
+import { Fab } from '@mui/material';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
@@ -25,8 +29,14 @@ function App() {
           {/* <Work /> */}
           <About />
           <Testimonials />
+          <Blogs />
           <Inquiry />
           {/* <Footer /> */}
+          <ScrollTop {...props}>
+            <Fab size="small" aria-label="scroll back to top">
+              <KeyboardArrowUpIcon />
+            </Fab>
+          </ScrollTop>
         </AnimatePresence>
       </ThemeProvider>
     </div>

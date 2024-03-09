@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 
 import Header from "../../utilities/Header/header";
 import TestimonialCard from "./card";
@@ -25,24 +25,14 @@ const Testimonials = () => {
             </Box>
             <Box margin="20px auto 20px auto">
                 <Swiper
-                    style={{
-                        "--swiper-pagination-color" : '#66fffc',
-                        "--swiper-pagination-bullet-inactive-color": "#999999",
-                        "--swiper-pagination-bullet-inactive-opacity": "0.5",
-                        "--swiper-pagination-bullet-size": "10px",
-                        "--swiper-pagination-bullet-horizontal-gap": "5px"
-                    }}
                     loop={true}
                     freeMode={true}
-                    pagination={{
-                      clickable: true,
-                      dynamicBullets: true,
+                    pagination={false}
+                    autoplay={{
+                        delay: 1500,
+                        pauseOnMouseEnter: true,
+                        disableOnInteraction: false,
                     }}
-                    // autoplay={{
-                    //     delay: 1500,
-                    //     pauseOnMouseEnter: true,
-                    //     disableOnInteraction: false,
-                    // }}
                     breakpoints={{
                         150: {
                             slidesPerView: 1,
@@ -77,7 +67,7 @@ const Testimonials = () => {
                             spaceBetween: 10,
                         }
                     }}
-                    modules={[FreeMode,Autoplay,EffectCreative, Pagination]}
+                    modules={[FreeMode,Autoplay,EffectCreative, Pagination,Navigation]}
                 >
                     {data.map((item) => {
                         return(

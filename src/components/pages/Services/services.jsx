@@ -2,7 +2,7 @@ import { Box, Grid } from "@mui/material";
 import Header from "../../utilities/Header/header";
 import ServiceCard from "./card";
 import BottomLine from "../../utilities/bottomline";
-import { motion } from "framer-motion";
+import { ServicesData } from "./data";
 
 const Services = () => {
     return ( 
@@ -20,12 +20,12 @@ const Services = () => {
                 columnSpacing={{ xs: 2, sm: 3, lg: 5 }}
                 style={{marginTop: '20px'}}
             >
-                {data.map((item) => {
+                {ServicesData.map((item) => {
                     return(
                         <Grid
-                            key={item._id} style={{ display: 'flex' }} item xs={6} sm={4} lg={3.75}
+                            key={item.id} style={{ display: 'flex' }} item xs={6} sm={4} lg={3.5}
                         >
-                            <ServiceCard data={data} />
+                            <ServiceCard data={ServicesData} id={item.id} />
                         </Grid>
                     )
                 })}
@@ -34,9 +34,5 @@ const Services = () => {
         </Box>
     );
 }
-
-
-
-const data = [ "h","h","h","h","h","h"]
  
 export default Services;

@@ -1,23 +1,21 @@
 import { Box } from "@mui/material";
 import CardHeading from "../../utilities/Card/cardHeading";
 import CardCaption from "../../utilities/Card/cardCaption";
-import { scrollVariant } from "../../Animations/variants";
 import { motion } from "framer-motion";
+import Reveal from "../../utilities/revealAnimation";
 
-const AboutCard = () => {
+const AboutCard = ({data,id}) => {
+    const {name,desc} = data[id];
     return ( 
-        <Box 
-            sx={container}
-            component={motion.div}
-            variants={scrollVariant}
-            initial={scrollVariant.hidden}
-            transition={scrollVariant.changeover}
-            whileInView={scrollVariant.visible}
-            viewport={scrollVariant.viewport}
-        >
-            <CardHeading>Future Concept.</CardHeading>
-            <CardCaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam purus urna,</CardCaption>
-        </Box>
+        <Reveal>
+            <Box 
+                sx={container}
+                component={motion.div}
+            >
+                <CardHeading>{name}</CardHeading>
+                <CardCaption>{desc}</CardCaption>
+            </Box>
+        </Reveal>
      );
 }
 
