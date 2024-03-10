@@ -12,6 +12,7 @@ import Logo from "./logo";
 import PropTypes from 'prop-types';
 import React, { useState } from "react";
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 const navItems = ['Home', 'Services', 'Work','About', 'Testimonials','Contact'];
 const drawerWidth = "100%";
@@ -35,7 +36,12 @@ const Navbar = (props) => {
             </Stack>
             <Stack spacing={2} alignItems="left" padding="10%">
                 {navItems.map((item) => (
-                    <Typography fontSize="18px" color="#000" onClick={handleDrawerToggle} fontWeight={500}>{item}</Typography>
+                    <Link 
+                        smooth={true}
+                        to={item}
+                    >
+                        <Typography fontSize="18px" color="#000" onClick={handleDrawerToggle} fontWeight={500}>{item}</Typography>
+                    </Link>
                 ))}
           </Stack>
         </Box>
@@ -44,10 +50,10 @@ const Navbar = (props) => {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return ( 
-        <Box 
+        <Box
+            id="BackToTop" 
             sx={navbar_cont}
             component={motion.div}
-           
         >
             <Logo />
             <Box sx={{display: {xs: 'none', md: 'inline'}}}>
@@ -61,16 +67,27 @@ const Navbar = (props) => {
                     {navItems.map(item => (
                         <Tab
                             disableRipple
-                            sx={{
-                                color: currentTab === item ? "#000" : '#d9d9d9',
-                                textTransform: 'capitalize', 
-                                fontWeight : currentTab === item ? 400 : 300,
-                                fontSize: currentTab === item ? "15px" : "13px"
-                            }}
                             value={item}
-                            to={item}
-                            label={item}
-                        />
+                            label={
+                                <Typography
+                                    sx={{
+                                        color: currentTab === item ? "#fff" : '#d9d9d9',
+                                        textTransform: 'capitalize', 
+                                        fontWeight : currentTab === item ? 400 : 300,
+                                        fontSize: currentTab === item ? "18px" : "15px"
+                                    }}
+                                    onClick={handleDrawerToggle}
+                                >
+                                    <Link
+                                        to={item} // Scroll to the corresponding element ID
+                                        smooth={true}
+                                    >
+                                        {item}
+                                    </Link>
+                                </Typography>
+                            }
+                        >
+                        </Tab>
                     ))}
                 </Tabs>
             </Box>
@@ -107,7 +124,7 @@ const navbar_cont = {
     display: 'flex',
     justifyContent: 'space-between',
     padding: '20px',
-    position: 'static'
+    // position: 'rel'
 }
 
 

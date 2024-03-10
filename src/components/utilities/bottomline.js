@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const BottomLine = () => {
     return ( 
-        <Box padding="30x 0px 30px 0px">
+        <Box sx={{padding: '30px'}}>
             <Box 
                 sx={line} 
                 component={motion.div}
@@ -17,12 +17,12 @@ const BottomLine = () => {
 }
 
 const line = {
-    height: '50px',
+    height: {xs: '40px' , sm: '60px'},
     border: '1px solid #66FCF1',
     width: '0px',
-    margin: 'auto',
-    // paddingTop:"30px",
-    // paddingBottom: '310px',
+    margin: 'auto'
+    // marginTop:"30px",
+    // marginBottom: '30px',
 }
  
 export default BottomLine;

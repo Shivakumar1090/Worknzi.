@@ -14,7 +14,7 @@ const ScrollTop = (props) => {
   
     const handleClick = (event) => {
         const anchor = (event.target.ownerDocument || document).querySelector(
-            '#back-to-top-anchor',
+            '#BackToTop',
         );
     
         if (anchor) {
@@ -31,7 +31,7 @@ const ScrollTop = (props) => {
                 role="presentation"
                 sx={{ position: 'fixed', bottom: 16, right: 16 }}
             >
-            {children}
+                {children}
             </Box>
       </Fade>
     );

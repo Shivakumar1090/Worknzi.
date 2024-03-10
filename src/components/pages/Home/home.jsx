@@ -3,47 +3,50 @@ import IMG_Ostrich1 from "../../../Assets/images/ostrich11.png";
 import IMG_Ostrich2 from "../../../Assets/images/ostrich22.png";
 import Reveal from "../../utilities/revealAnimation";
 import { motion } from "framer-motion";
+import { Element } from "react-scroll";
 
 const Home = () => {
 
     return ( 
-        <Box alignItems="center"  margin="auto" width={{xs: '90%' ,sm: '85%', md: '80%',lg: '80%'}} height={{xs: '90vh',sm: '100vh',md: '80vh'}} position="relative">
-            <Stack 
-                textAlign={{xs: 'center',md: 'left'}}
-                justifyContent="center"
-                alignItems={{xs: 'center',md: 'start'}}
-                height="100%"
-            >
-                <Reveal><Typography variant="caption" gutterBottom >Where your ideas take flight.</Typography></Reveal>
-                <Reveal><Typography sx={largetext1} fontWeight={600}>We are digital.</Typography></Reveal>
-                <Reveal><Typography sx={largetext2} gutterBottom>Agency</Typography></Reveal>
-                <Reveal><Button sx={button}>Getting Started</Button></Reveal>
-                <Box 
-                    sx={Imgscontainer}
-                    component={motion.div}
-                    initial={{y: -500,opacity: 0}}
-                    animate={{opacity: 1,y: 0}}
-                    
-                    transition={{duration : 2,delay: 0.3,type: 'spring'}}
+        <Element name="Home">
+            <Box alignItems="center"  margin="auto" width={{xs: '90%' ,sm: '85%', md: '80%',lg: '80%'}} height={{xs: '90vh',sm: '100vh',md: '80vh'}} position="relative">
+                <Stack 
+                    textAlign={{xs: 'center',md: 'left'}}
+                    justifyContent="center"
+                    alignItems={{xs: 'center',md: 'start'}}
+                    height="100%"
                 >
-                    <Box sx={img}>
-                        <img src={IMG_Ostrich1} alt="" style={{width: '100%',objectFit: 'cover'}}/>
+                    <Reveal><Typography variant="caption" gutterBottom >Where your ideas take flight.</Typography></Reveal>
+                    <Reveal><Typography sx={largetext1} >We are digital.</Typography></Reveal>
+                    <Reveal><Typography sx={largetext2} gutterBottom>Agency</Typography></Reveal>
+                    <Reveal><Button sx={button}>Getting Started</Button></Reveal>
+                    <Box 
+                        sx={Imgscontainer}
+                        component={motion.div}
+                        initial={{y: -500,opacity: 0}}
+                        animate={{opacity: 1,y: 0}}
+                        
+                        transition={{duration : 2,delay: 0.3,type: 'spring'}}
+                    >
+                        <Box sx={img}>
+                            <img src={IMG_Ostrich1} alt="" style={{width: '100%',objectFit: 'cover'}}/>
+                        </Box>
+                        <Box sx={img2}>
+                            <img src={IMG_Ostrich2} alt=""  style={{width: '100%',objectFit: 'cover'}}/>
+                        </Box>
                     </Box>
-                    <Box sx={img2}>
-                        <img src={IMG_Ostrich2} alt=""  style={{width: '100%',objectFit: 'cover'}}/>
-                    </Box>
-                </Box>
-            
-            </Stack>
+                
+                </Stack>
 
-        </Box>
+            </Box>
+        </Element>
      );
 }
 
 const largetext1 = {
     fontWeight: {xs: 600,sm: 600},
     letterSpacing: {xs: 5,md: 6},
-    fontSize: {xs: '40px', sm: '85px' ,lg: '100px'},
+    fontSize: {xs: '50px', sm: '85px' ,lg: '100px'},
     lineHeight: {xs: 1.2,md: 1},
 }
 
@@ -65,7 +68,6 @@ const button = {
     "&:hover" : {
         background: '#66FCF1',
         color: '#000',
-        
         border: "3px solid #66FCF1",
     }
 }

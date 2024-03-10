@@ -3,21 +3,11 @@ import profile from "../../../Assets/images/testimonials/profile.png";
 import stars from "../../../Assets/images/testimonials/stars.png";
 import testimonial from "../../../Assets/images/testimonials/testimonial.png";
 import CardCaption from "../../utilities/Card/cardCaption";
-import { motion } from "framer-motion";
-import { scrollVariant } from "../../Animations/variants";
 
 const TestimonialCard = () => {
     
     return ( 
-        <Box 
-            component={motion.div}
-            variants={scrollVariant}
-            initial={scrollVariant.hidden}
-            transition={scrollVariant.changeover}
-            whileInView={scrollVariant.visible}
-            viewport={scrollVariant.viewport}
-            // whileHover={{scale: 0.9}}
-        >
+        <Box >
             <Stack alignItems="center" textAlign="center"  direction="column" spacing={{xs: -3,sm: -5,md: -5}}>
                 <Box sx={innercontainer} alignItems="center">
                     <Box sx={icon}>

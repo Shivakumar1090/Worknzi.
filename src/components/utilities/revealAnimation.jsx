@@ -1,8 +1,25 @@
 import { Box } from "@mui/material";
 import { motion } from "framer-motion";
-import { scrollVariant } from "../Animations/variants";
 
-const Reveal = ({children}) => {
+const Reveal = ({children,sx}) => {
+    const scrollVariant = {
+        "hidden" : {
+            y: 50,
+            opacity: 0,
+        },
+        "visible": {
+            y: 0,
+            opacity: 1,
+        },
+        "changeover": {
+            duration: 2,
+            type: 'spring',
+            delay: 0.2,
+        },
+        "viewport": {
+            once: true,
+        }
+    }
     return ( 
         <Box
             component={motion.div}
@@ -11,6 +28,8 @@ const Reveal = ({children}) => {
             transition={scrollVariant.changeover}
             whileInView={scrollVariant.visible}
             viewport={scrollVariant.viewport}
+
+            sx={sx}
         >
             {children}
         </Box>

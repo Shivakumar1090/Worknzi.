@@ -15,7 +15,7 @@ const Card = ({id,data}) => {
                 sx={container}
                 justifyContent="center"
                 component={motion.div}
-                whileHover={{scale: 1.1,transition: {duration:0.3},border: '2px solid #66FCF1',type: 'spring'}}
+                whileHover={{scale: 1.1,transition: {duration:1},border: '2px solid #66FCF1',type: 'spring'}}
                 initial={{border: '2px solid #121212'}}
             >
                 <Box sx={imgContainer}>
@@ -33,12 +33,12 @@ const container = {
     background: '#121212', 
     textAlign: 'left',
     height: {xs: '200px' , sm: '250px',lg: '250px'},
-    padding: {xs: '15px',sm: '15px',lg: '25px'},
+    padding: {xs: '20px',sm: '15px',lg: '25px'},
 }
 
 const imgContainer = {
-    marginBottom: {xs: '15px',sm: '20px',md: '25px'},
-    width : {xs: '30px' , sm: '40px',lg: '50px'},
+    marginBottom: {xs: '17px',sm: '20px',md: '25px'},
+    width : {xs: '40px' , sm: '40px',lg: '50px'},
 }
  
 export default Card;

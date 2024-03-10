@@ -6,8 +6,9 @@ const {HomeCardsData}  = require("./data");
 
 const HomeCards = () => {
     return ( 
-        <Box>
+        <Box width={{xs: '90%' ,sm: '85%', md: '80%',lg: '80%'}} margin="auto">
             <Grid
+                
                 component={motion.div}
                 container
                 direction="row"
@@ -19,7 +20,7 @@ const HomeCards = () => {
                 {HomeCardsData.map((item) => {
                     return(
                         <Grid
-                            key={item.id} item xs={8} sm={4} lg={2.75}
+                            key={item.id} item xs={10} sm={4} lg={3.5}
                         >
                             <Card data={HomeCardsData} id={item.id}/>
                         </Grid>
