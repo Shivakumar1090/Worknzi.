@@ -1,6 +1,4 @@
 import { Box, Stack } from "@mui/material";
-import icon_idea from "../../../Assets/icons/idea.png";
-import icon_ideaDark from "../../../Assets/icons/ideaDark.png";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import CardHeading from "../../utilities/Card/cardHeading";
@@ -9,7 +7,7 @@ import CardLine from "../../utilities/Card/cardLine";
 import Reveal from "../../utilities/revealAnimation";
 
 const ServiceCard = ({id,data}) => {
-    const {name,desc} = data[id];
+    const {name,desc,icon,darkIcon} = data[id];
     const [ishover,setisHover] = useState(false);
     return ( 
         <Reveal sx={{width: '100%'}}>
@@ -23,8 +21,13 @@ const ServiceCard = ({id,data}) => {
                 
                 justifyContent="center"
             >
-                <Box sx={icon}>
-                    <img src={ishover ? icon_ideaDark : icon_idea} alt="" style={{width: '100%',objectFit: 'cover'}}/>
+                <Box 
+                    sx={iconContainer}
+                    component={motion.div}
+                    initial={{ scale: 1 }}
+                    animate={{ scale: ishover ? 1.2 : 1,transition: {duration: 0.3} }}
+                >
+                    <img src={ishover ? darkIcon : icon} alt="" style={{width: '100%',objectFit: 'cover'}}/>
                 </Box>
                 <CardHeading color={ishover ? "#000" : '#ffff'} >{name}</CardHeading>
                 <CardLine  border={ishover ? "solid #000" : "solid #66FCF1"}/>
@@ -45,8 +48,8 @@ const container = {
     borderBottom:'2px solid #66FCF1',
 }
 
-const icon = {
-    width:  {xs: '40px' , sm: '50px',md: '40px', lg: '50px'},
+const iconContainer = {
+    width:  {xs: '40px' , sm: '50px',md: '40px', lg: '70px'},
     paddingBottom: {xs: '15px',sm: '18px',md: '25px'},
 }
 

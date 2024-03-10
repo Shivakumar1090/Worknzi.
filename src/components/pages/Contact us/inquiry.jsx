@@ -1,6 +1,6 @@
 import { Button, Stack, Typography } from "@mui/material";
-import fbicon from "../../../Assets/icons/accounts/fb.png";
-import instaicon from "../../../Assets/icons/accounts/insta.png";
+// import fbicon from "../../../Assets/icons/accounts/fb.png";
+// import instaicon from "../../../Assets/icons/accounts/insta.png";
 import Reveal from "../../utilities/revealAnimation";
 import { motion } from "framer-motion";
 import { Element } from "react-scroll";
@@ -13,7 +13,7 @@ const Inquiry = () => {
                     spacing={3} 
                     alignItems="center" 
                     textAlign="center" 
-                    height={{xs: '40vh',sm: '50vh'}}
+                    height="50vh"
                     padding={{xs: '5px',sm: '0px'}}
                     justifyContent="center"
                 >
@@ -23,11 +23,17 @@ const Inquiry = () => {
                         component={motion.div}
                         whileHover={{scale: 1.1,transition: {duration: 0.2}}}
                     >Have any project in mind ?</Typography>
-                    <Stack spacing={3} direction="row">
+                    {/* <Stack spacing={3} direction="row">
                         <img src={fbicon} alt="" style={{width: '30px',height: '30px'}}/>
                         <img src={instaicon} alt="" style={{width: '30px',height: '30px'}}/>
-                    </Stack>
-                    <Button sx={button}>Make inquiry</Button>
+                    </Stack> */}
+                    <a
+                        href="https://wa.me/message/XIPTNZQLNKSMA1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button sx={button}>Make inquiry</Button>
+                    </a>
                 </Stack>
             </Reveal>
         </Element>

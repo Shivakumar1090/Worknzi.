@@ -2,6 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import Logo from "./logo";
 import Reveal from "./revealAnimation";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 const Footer = () => {
     return ( 
@@ -24,7 +25,7 @@ const Footer = () => {
                         <Typography fontSize="20px" fontWeight={600}>Contact us</Typography>
                         <Typography fontWeight={200}>+91 7396959754</Typography>
                         <Lightfont>ch.shivakumar491@gmail.com</Lightfont>
-                        <Lightfont>Nit Agartala, Jirania, Tripura</Lightfont>
+                        <Lightfont>Nit Agartala, Jirania, Tripura, India</Lightfont>
                     </Stack>
                     <Stack spacing={1}>
                         <Typography fontSize="20px" fontWeight={600}>Our Services</Typography>
@@ -36,10 +37,12 @@ const Footer = () => {
                         {/* <Lightfont>Service 03</Lightfont> */}
                     </Stack>
                     <Stack spacing={1}>
-                        <Typography fontSize="20px" fontWeight={600}>About us</Typography>
-                        <Lightfont>About</Lightfont>
-                        <Lightfont>Blog</Lightfont>
-                        <Lightfont>Home</Lightfont>
+                        <Typography fontSize="20px" fontWeight={600}>Pages</Typography>
+                        <Link to="Home" smooth={true} ><Lightfont cursor='pointer'>Home</Lightfont></Link>
+                        <Link to="Services" smooth={true}><Lightfont cursor='pointer'>Services</Lightfont></Link>
+                        <Link to="About" smooth={true}><Lightfont cursor='pointer'>About</Lightfont></Link>
+                        <Link to="Testimonials" smooth={true}><Lightfont cursor='pointer'>Testimonials</Lightfont></Link>
+                        <Link to="Blogs" smooth={true}><Lightfont cursor='pointer'>Blogs</Lightfont></Link>
                     </Stack>
                 </Stack>
             </Reveal>
@@ -47,9 +50,9 @@ const Footer = () => {
     );
 }
 
-const Lightfont = ({children}) => {
+const Lightfont = ({children,cursor}) => {
     return(
-        <Typography fontWeight={200}>{children}</Typography>
+        <Typography sx={{cursor: cursor && "pointer"}} fontWeight={200}>{children}</Typography>
     )
 }
 const line = {

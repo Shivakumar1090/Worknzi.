@@ -3,6 +3,7 @@ import BlogsCard from "./card";
 import BottomLine from "../../utilities/bottomline";
 import Reveal from "../../utilities/revealAnimation";
 import { Element } from "react-scroll";
+import { BlogsData } from "./data";
 
 const Blogs = () => {
     return ( 
@@ -25,12 +26,12 @@ const Blogs = () => {
                     columnSpacing={{ xs: 2, sm: 3, lg: 4 }}
                     style={{padding: '20px'}}
                 >
-                    {data.map((item) => {
+                    {BlogsData.map((item) => {
                         return(
                             <Grid
                                 key={item.id} style={{ display: 'flex' }} item xs={10} sm={4} lg={3.75}
                             >
-                                <BlogsCard data={data} />
+                                <BlogsCard data={BlogsData} id={item.id}/>
                             </Grid>
                         )
                     })}
@@ -40,7 +41,5 @@ const Blogs = () => {
         </Element>
     );
 }
-
-const data = [ "h","h","h"]
  
 export default Blogs;

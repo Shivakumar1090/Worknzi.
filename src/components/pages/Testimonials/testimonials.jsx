@@ -13,6 +13,7 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation,FreeMode ,EffectCreative} from 'swiper/modules';
 import Reveal from "../../utilities/revealAnimation";
 import { Element } from "react-scroll";
+import { TestimonialsData } from "./data";
 
 const Testimonials = () => {
     
@@ -30,7 +31,7 @@ const Testimonials = () => {
                     <Swiper
                         slidesPerView= {1}
                         spaceBetween={20}
-                        loop={true}
+                        // loop={true}
                         freeMode={true}
                         pagination={false}
                         autoplay={{
@@ -59,10 +60,10 @@ const Testimonials = () => {
                         }}
                         modules={[FreeMode,Autoplay,EffectCreative, Pagination,Navigation]}
                     >
-                        {data.map((item) => {
+                        {TestimonialsData.map((item) => {
                             return(
-                                <SwiperSlide>
-                                    <TestimonialCard data={data} />
+                                <SwiperSlide key={item.id}>
+                                    <TestimonialCard data={TestimonialsData} id={item.id} />
                                 </SwiperSlide>
                             )
                         })}
@@ -73,7 +74,5 @@ const Testimonials = () => {
         </Element>
     );
 }
-
-const data = [ "h","h","h","h","h","h","h","h"];
  
 export default Testimonials;

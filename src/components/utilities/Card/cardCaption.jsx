@@ -5,7 +5,7 @@ const CardCaption = ({children,color,fontWeight}) => {
     return ( 
         <Typography
             variant="body2"
-            fontSize={{xs: '10px',sm: '12px'}}
+            fontSize={{xs: '11px',sm: '12px',lg: '13px'}}
             color={color}
             fontWeight={fontWeight}
         >

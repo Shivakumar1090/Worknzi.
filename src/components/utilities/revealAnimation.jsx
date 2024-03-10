@@ -12,7 +12,7 @@ const Reveal = ({children,sx}) => {
             opacity: 1,
         },
         "changeover": {
-            duration: 2,
+            duration: 1.5,
             type: 'spring',
             delay: 0.2,
         },

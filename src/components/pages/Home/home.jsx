@@ -3,7 +3,7 @@ import IMG_Ostrich1 from "../../../Assets/images/ostrich11.png";
 import IMG_Ostrich2 from "../../../Assets/images/ostrich22.png";
 import Reveal from "../../utilities/revealAnimation";
 import { motion } from "framer-motion";
-import { Element } from "react-scroll";
+import { Element, Link } from "react-scroll";
 
 const Home = () => {
 
@@ -16,10 +16,19 @@ const Home = () => {
                     alignItems={{xs: 'center',md: 'start'}}
                     height="100%"
                 >
-                    <Reveal><Typography variant="caption" gutterBottom >Where your ideas take flight.</Typography></Reveal>
-                    <Reveal><Typography sx={largetext1} >We are digital.</Typography></Reveal>
-                    <Reveal><Typography sx={largetext2} gutterBottom>Agency</Typography></Reveal>
-                    <Reveal><Button sx={button}>Getting Started</Button></Reveal>
+                    <Reveal><Typography fontSize={{xs: '13px',sm: '14px',lg: '15px'}} variant="caption" gutterBottom letterSpacing={3}>Where Your ideas take flight.</Typography></Reveal>
+                    <Reveal>
+                        <Typography sx={largetext1} gutterBottom>
+                            Your <span style={{color: '#66fcf1',opacity: 0.8}}>Destination</span> for <span style={{color: '#66fcf1',opacity: 0.9}}>Digital</span> Solutions.
+                        </Typography>
+                    </Reveal>
+                    <Reveal>
+                        <Link to="Services" smooth={true}>
+                        <Button sx={button}>
+                            Getting Started
+                        </Button>
+                        </Link>
+                    </Reveal>
                     <Box 
                         sx={Imgscontainer}
                         component={motion.div}
@@ -46,17 +55,9 @@ const Home = () => {
 const largetext1 = {
     fontWeight: {xs: 600,sm: 600},
     letterSpacing: {xs: 5,md: 6},
-    fontSize: {xs: '50px', sm: '85px' ,lg: '100px'},
-    lineHeight: {xs: 1.2,md: 1},
+    fontSize: {xs: '50px', sm: '85px' ,lg: '90px'},
+    lineHeight: {xs: 1.2,md: 1.2},
 }
-
-const largetext2 = {
-    fontWeight: {xs: 600,sm: 700},
-    letterSpacing: {xs: 5,md: 6},
-    fontSize: {xs: '50px', sm: '85px' ,lg: '100px'},
-    lineHeight: {xs: 1.2,md: 1},
-}
-
 
 const button = {
     border: "3px solid #fff",

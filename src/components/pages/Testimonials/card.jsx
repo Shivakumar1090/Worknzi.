@@ -1,11 +1,10 @@
 import { Box, Stack, Typography } from "@mui/material";
-import profile from "../../../Assets/images/testimonials/profile.png";
 import stars from "../../../Assets/images/testimonials/stars.png";
 import testimonial from "../../../Assets/images/testimonials/testimonial.png";
 import CardCaption from "../../utilities/Card/cardCaption";
 
-const TestimonialCard = () => {
-    
+const TestimonialCard = ({id,data}) => {
+    const {name,desc,designation,img} = data[id];
     return ( 
         <Box >
             <Stack alignItems="center" textAlign="center"  direction="column" spacing={{xs: -3,sm: -5,md: -5}}>
@@ -14,16 +13,16 @@ const TestimonialCard = () => {
                         <img src={testimonial} alt="" style={{width: '100%'}}/>
                     </Box>
                     <Stack spacing={2}  alignItems="center">
-                        <CardCaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam purus urna,Lorem ipsum dolor sit amet, consectetur adipiscing elit. </CardCaption>
+                        <CardCaption>{desc}</CardCaption>
                         <img src={stars} alt="" style={{width: '100px'}}/>
                     </Stack>
                 </Box>
                 <Stack spacing={1} alignItems="center">
                     <Box width={{xs: '70px' , sm: '70px' ,lg: '100px'}}>
-                        <img src={profile} alt="" style={{width: '100%',objectFit: 'cover'}}/>
+                        <img src={img} alt="" style={{width: '100%',objectFit: 'cover'}}/>
                     </Box>
-                    <Typography fontWeight={500}>Ram Kumar</Typography>
-                    <Typography fontSize={{xs: '13px',sm: '14px'}} fontWeight={200}>Designer</Typography>
+                    <Typography fontWeight={500}>{name}</Typography>
+                    <Typography fontSize={{xs: '13px',sm: '14px'}} fontWeight={200}>{designation}</Typography>
                 </Stack>
             </Stack>
         </Box>

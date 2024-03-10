@@ -17,7 +17,7 @@ const theme = createTheme({
         },
         caption : {
             color: '#66FCF1',
-            textTransform: 'uppercase'
+            textTransform: 'uppercase',
         },
         body2: {
             fontWeight: 200,
