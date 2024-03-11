@@ -6,7 +6,7 @@ import theme from './theme';
 import Home from './components/pages/Home/home';
 import Navbar from './components/utilities/navbar';
 import Services from './components/pages/Services/services';
-// import Work from './components/pages/Work/work';
+import Work from './components/pages/Work/work';
 import About from './components/pages/About/about';
 import Testimonials from './components/pages/Testimonials/testimonials';
 import Inquiry from './components/pages/Contact us/inquiry';
@@ -27,7 +27,7 @@ function App(props) {
           <Home />
           <HomeCards />
           <Services />
-          {/* <Work /> */}
+          <Work />
           <About />
           <Testimonials />
           <Blogs />

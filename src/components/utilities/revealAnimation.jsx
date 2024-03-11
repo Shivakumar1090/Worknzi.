@@ -14,7 +14,7 @@ const Reveal = ({children,sx}) => {
         "changeover": {
             duration: 1.5,
             type: 'spring',
-            delay: 0.2,
+            delay: 0.3,
         },
         "viewport": {
             once: true,

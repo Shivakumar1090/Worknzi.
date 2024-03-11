@@ -33,13 +33,13 @@ const About = () => {
                         <Box 
                             height={{xs: '100%',sm: '100%'}}
                             component={motion.div}
-                            whileHover={{scale: 0.9}}
+                            overflow="hidden"
                         >
-                            <img src={IMG_about1} alt="" style={{height: "100%",objectFit: 'cover'}}/>
+                            <motion.img whileHover={{scale: 1.1}} src={IMG_about1} alt="" style={{height: "100%",objectFit: 'cover'}}/>
                         </Box>
-                        <Stack display={{xs: 'none',md: 'flex'}} spacing={5} height="100%">
-                            <img src={IMG_about2} alt="" style={{height: '45%'}}/>
-                            <img src={IMG_about3} alt="" style={{height: '45%'}}/>
+                        <Stack display={{xs: 'none',md: 'flex'}} spacing={5} height="100%" overflow="hidden">
+                            <motion.img whileHover={{scale: 1.1}} src={IMG_about2} alt="" style={{height: '45%'}}/>
+                            <motion.img whileHover={{scale: 1.1}} src={IMG_about3} alt="" style={{height: '45%'}}/>
                         </Stack>
                     </Stack>
                 </Reveal>
