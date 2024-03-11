@@ -8,7 +8,7 @@ export const WorkData = [
         id: 0,
         img: Portfolio,
         name: "Artistry Anand",
-        link: "https://www.artistryanand.in/",
+        link: "https://www.artistryanand.in",
     },
     {
         id: 1,

@@ -9,7 +9,6 @@ const WorkCard = ({data,id}) => {
     return ( 
         <Box 
             sx={container}
-            component={motion.div}
             onMouseEnter={() => setIshover(true)}
             onMouseLeave={() => setIshover(false)}
         >

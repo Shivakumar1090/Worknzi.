@@ -4,7 +4,6 @@ import BottomLine from "../../utilities/bottomline";
 import { Element } from "react-scroll";
 import {Swiper, SwiperSlide} from "swiper/react";
 import "../../../App.css";
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
