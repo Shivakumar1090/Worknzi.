@@ -2,11 +2,15 @@ import { Box, Stack, Typography } from "@mui/material";
 import stars from "../../../Assets/images/testimonials/stars.png";
 import testimonial from "../../../Assets/images/testimonials/testimonial.png";
 import CardCaption from "../../utilities/Card/cardCaption";
+import { motion } from "framer-motion";
 
 const TestimonialCard = ({id,data}) => {
     const {name,desc,designation,img} = data[id];
     return ( 
-        <Box >
+        <Box 
+            component={motion.div}
+            whileHover={{y: -10,transition: {duration: 1.2,type: 'spring'}}}
+        >
             <Stack alignItems="center" textAlign="center"  direction="column" spacing={{xs: -3,sm: -5,md: -5}}>
                 <Box sx={innercontainer} alignItems="center">
                     <Box sx={icon}>

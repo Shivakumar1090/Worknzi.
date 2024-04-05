@@ -18,14 +18,14 @@ const ServiceCard = ({id,data}) => {
                 sx={{...container, '&:hover': hoverStyle}}
                 onMouseEnter={() => setisHover(true)}
                 onMouseLeave={() => setisHover(false)}
-                
+                whileHover={{y: -15,transition: {duration: 1.2,type: 'spring'}}}
                 justifyContent="center"
             >
                 <Box 
                     sx={iconContainer}
                     component={motion.div}
                     initial={{ scale: 1 }}
-                    animate={{ scale: ishover ? 1.2 : 1,transition: {duration: 0.3} }}
+                    animate={{ scale: ishover ? 1.2 : 1}}
                 >
                     <img src={ishover ? darkIcon : icon} alt="" style={{width: '100%',objectFit: 'cover'}}/>
                 </Box>

@@ -24,7 +24,11 @@ const Home = () => {
                     </Reveal>
                     <Reveal>
                         <Link to="Services" smooth={true}>
-                        <Button sx={button}>
+                        <Button 
+                            sx={button}
+                            component={motion.div}
+                            whileHover={{x: 15,transition: {duration: 1.2,type: 'spring'}}}
+                        >
                             Getting Started
                         </Button>
                         </Link>

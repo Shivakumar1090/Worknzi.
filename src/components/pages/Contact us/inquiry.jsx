@@ -32,7 +32,11 @@ const Inquiry = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Button sx={button}>Make inquiry</Button>
+                        <Button 
+                            sx={button}
+                            component={motion.div}
+                            whileHover={{x: 15,transition: {duration: 1.2,type: 'spring'}}}
+                        >Make inquiry</Button>
                     </a>
                 </Stack>
             </Reveal>
@@ -50,6 +54,7 @@ const button = {
         background: '#66FCF1',
         color: '#000',
         border: "3px solid #66FCF1",
+        fontWeight: '500',
     }
 }
  
