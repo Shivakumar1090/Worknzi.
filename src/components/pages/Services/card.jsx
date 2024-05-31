@@ -23,9 +23,6 @@ const ServiceCard = ({id,data}) => {
             >
                 <Box 
                     sx={iconContainer}
-                    component={motion.div}
-                    initial={{ scale: 1 }}
-                    animate={{ scale: ishover ? 1.2 : 1}}
                 >
                     <img src={ishover ? darkIcon : icon} alt="" style={{width: '100%',objectFit: 'cover'}}/>
                 </Box>
